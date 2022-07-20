@@ -160,7 +160,7 @@ a {
   fill: currentColor;
 }
 
-/* Модальное окно */
+/* ================== Модальное окно ================ */
 
 .backdrop {
   position: fixed;
@@ -172,12 +172,13 @@ a {
   background: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: opacity 250ms var(--transition-duration);
+  transition: opacity 250ms var(--transition-duration), visibility 250ms var(--transition-duration);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .backdrop.is-hidden .modal-form {
@@ -566,6 +567,10 @@ a {
   transform: translateY(0%);
 }
 
+.project-link:focus .project-description {
+  transform: translateY(0%);
+}
+
 .project-label {
   padding: 20px 24px;
 
@@ -646,9 +651,21 @@ a {
 }
 
 .footer-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
   border-radius: 50%;
+
   background: rgba(255, 255, 255, 0.1);
   color: var(--alternate-color);
+
+  transition: background-color 250ms var(--transition-duration);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  background-color: var(--brand-color);
 }
 
 .join-us {
